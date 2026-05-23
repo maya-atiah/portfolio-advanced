@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/sections/HeroSection';
 import AboutMe from '../components/sections/AboutMe';
+import Experience from '../components/sections/Experience';
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <main className='overflow-hidden relative'>
         <HeroSection />
         <AboutMe />
+        <Experience />
       </main>
     </>
   );
