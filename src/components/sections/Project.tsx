@@ -21,15 +21,15 @@ export const projects = [
       'Dynamic dashboards with drill-down analytics, query-driven reporting and reusable visualization components for large datasets.',
     tech: ['React', 'Recharts', 'Query Engine'],
   },
-  {
-    id: 'hr-system',
-    title: 'HR Management System',
-    tag: 'Full Stack',
-    category: 'Full Stack',
-    description:
-      'Full-stack HR platform with leave workflows, RBAC, protected routes and dynamic permission-based UI rendering.',
-    tech: ['React', '.NET', 'RBAC', 'JWT'],
-  },
+  //   {
+  //     id: 'hr-system',
+  //     title: 'HR Management System',
+  //     tag: 'Full Stack',
+  //     category: 'Full Stack',
+  //     description:
+  //       'Full-stack HR platform with leave workflows, RBAC, protected routes and dynamic permission-based UI rendering.',
+  //     tech: ['React', '.NET', 'RBAC', 'JWT'],
+  //   },
   {
     id: 'aud-crm',
     title: 'AUD Online & CRM',
@@ -48,15 +48,15 @@ export const projects = [
       'Enterprise management for attendance, IT/finance device workflows, and a Clockify-like project management system.',
     tech: ['React', 'Node.js', 'PostgreSQL'],
   },
-  {
-    id: 'real-time-dash',
-    title: 'Real-Time Dashboards',
-    tag: 'Internal Tools',
-    category: 'Dashboards',
-    description:
-      'Live dashboards using Socket.IO for real-time data updates, interactive charts and operational visibility.',
-    tech: ['Socket.IO', 'ApexCharts', 'TS'],
-  },
+  //   {
+  //     id: 'real-time-dash',
+  //     title: 'Real-Time Dashboards',
+  //     tag: 'Internal Tools',
+  //     category: 'Dashboards',
+  //     description:
+  //       'Live dashboards using Socket.IO for real-time data updates, interactive charts and operational visibility.',
+  //     tech: ['Socket.IO', 'ApexCharts', 'TS'],
+  //   },
 ];
 const Project = () => {
   const [active, setActive] = useState<string>('All');
