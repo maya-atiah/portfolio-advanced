@@ -1,7 +1,19 @@
 import { Cloud, Code2, Smartphone } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const AboutMe = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        entry.isIntersecting && sectionRef.current?.classList.add('revealed'),
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const services = [
     { icon: Code2, title: 'Website Development' },
     { icon: Smartphone, title: 'App Development' },
@@ -9,7 +21,11 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id='about' className='section-wrapper scroll-reveal'>
+    <section
+      id='about'
+      ref={sectionRef}
+      className='section-wrapper scroll-reveal'
+    >
       <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
         <div className='relative pl-10'>
           <div className='absolute left-3 top-4 bottom-4 w-px bg-primary/60' />
