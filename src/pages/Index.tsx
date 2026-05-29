@@ -7,6 +7,7 @@ import Contact from '../components/sections/Contact';
 import Project from '../components/sections/Project';
 import Footer from '../components/sections/Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
+import Skills from '../components/sections/Skills';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <main className='overflow-hidden relative'>
         <HeroSection />
         <AboutMe />
+        <Skills />
         <Experience />
         <Project />
         <Contact />
