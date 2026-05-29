@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '../../lib/utils';
 import { Briefcase, GraduationCap } from 'lucide-react';
 
@@ -43,11 +43,27 @@ const education = [
   },
 ];
 const Experience = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const [tab, setTab] = useState<'exp' | 'edu'>('exp');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        entry.isIntersecting && sectionRef.current?.classList.add('revealed'),
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const items = tab === 'exp' ? experiences : education;
 
   return (
-    <section id='experience' className='section-wrapper scroll-reveal'>
+    <section
+      id='experience'
+      ref={sectionRef}
+      className='section-wrapper scroll-reveal'
+    >
       <div className='max-w-5xl mx-auto'>
         <div className='text-center mb-12'>
           <p className='section-subtitle'>My career so far</p>

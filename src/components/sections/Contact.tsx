@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Input } from '../ui/Input';
 import { Textarea } from '../ui/Textarea';
@@ -21,8 +21,24 @@ const contacts = [
 ];
 
 const Contact = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        entry.isIntersecting && sectionRef.current?.classList.add('revealed'),
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id='contact' className='section-wrapper scroll-reveal'>
+    <section
+      id='contact'
+      ref={sectionRef}
+      className='section-wrapper scroll-reveal'
+    >
       <div className='max-w-6xl mx-auto'>
         <div className='text-center mb-16'>
           <p className='section-subtitle'>Let's work together</p>

@@ -12,7 +12,6 @@ const Index = () => {
   return (
     <>
       <ParallaxBackground />
-
       <Navbar />
       <main className='overflow-hidden relative'>
         <HeroSection />

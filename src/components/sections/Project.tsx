@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const projects = [
@@ -59,8 +59,18 @@ export const projects = [
   //   },
 ];
 const Project = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState<string>('All');
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        entry.isIntersecting && sectionRef.current?.classList.add('revealed'),
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
   const categories = useMemo(
     () => ['All', ...Array.from(new Set(projects.map((p) => p.category)))],
     [],
@@ -70,7 +80,11 @@ const Project = () => {
     active === 'All' ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id='projects' className='section-wrapper scroll-reveal'>
+    <section
+      id='projects'
+      ref={sectionRef}
+      className='section-wrapper scroll-reveal'
+    >
       <div className='max-w-7xl mx-auto'>
         <div className='text-center mb-16'>
           <p className='section-subtitle'>Selected work</p>
