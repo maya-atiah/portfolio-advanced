@@ -6,10 +6,13 @@ import Experience from '../components/sections/Experience';
 import Contact from '../components/sections/Contact';
 import Project from '../components/sections/Project';
 import Footer from '../components/sections/Footer';
+import ParallaxBackground from '../components/ParallaxBackground';
 
 const Index = () => {
   return (
     <>
+      <ParallaxBackground />
+
       <Navbar />
       <main className='overflow-hidden relative'>
         <HeroSection />
