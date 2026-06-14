@@ -1,5 +1,12 @@
-import { Cloud, Code2, Smartphone } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import {
+  BarChart3,
+  Cloud,
+  Code2,
+  Gauge,
+  Layout,
+  Smartphone,
+} from 'lucide-react';
+import React, { Activity, useEffect, useRef } from 'react';
 
 const AboutMe = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -15,9 +22,11 @@ const AboutMe = () => {
   }, []);
 
   const services = [
-    { icon: Code2, title: 'Website Development' },
-    { icon: Smartphone, title: 'App Development' },
-    { icon: Cloud, title: 'Website Hosting' },
+    { icon: Code2, title: 'Frontend Architecture & UI Engineering' },
+    { icon: Layout, title: 'UI/UX Implementation (Figma to Code)' },
+    { icon: BarChart3, title: 'Dashboards & Data Visualization' },
+    { icon: Cloud, title: 'API Integration & Backend Systems' },
+    { icon: Gauge, title: 'Performance Optimization' },
   ];
 
   return (
@@ -34,7 +43,7 @@ const AboutMe = () => {
             {services.map(({ icon: Icon, title }, i) => (
               <li key={i} className='relative flex items-center gap-6'>
                 {/* dot */}
-                <span className='absolute -left-[30px] w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]' />
+                <span className='absolute -left-[33px] w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]' />
                 <div className='w-14 h-14 rounded-xl glass-card flex items-center justify-center shrink-0'>
                   <Icon className='w-7 h-7 text-primary' strokeWidth={1.5} />
                 </div>

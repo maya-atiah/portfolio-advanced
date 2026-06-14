@@ -1,4 +1,7 @@
+import { ScrollLink } from 'react-scroll';
 import { useMousePosition, useParallax } from '../../lib/parallax';
+import { Button } from '../ui/Button';
+import { Download } from 'lucide-react';
 
 const HeroSection = () => {
   const heroOffset = useParallax(0.3);
@@ -7,7 +10,14 @@ const HeroSection = () => {
 
   const tiltX = (mouse.x / window.innerWidth - 0.5) * 10;
   const tiltY = (mouse.y / window.innerHeight - 0.5) * 10;
-
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Maya-Atiah-CV.pdf';
+    link.download = 'Maya-Atiah-CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section
       id='home'
@@ -17,7 +27,7 @@ const HeroSection = () => {
         className='max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center'
         style={{ transform: `translateY(${heroOffset * 0.4}px)` }}
       >
-        <div className='flex flex-col justify-center order-2 md:order-1 '>
+        <div className='flex flex-col justify-center order-2 md:order-1 animate-fade-up'>
           <h1 className='text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 leading-tight text-foreground'>
             Maya Atiah
           </h1>
@@ -34,6 +44,31 @@ const HeroSection = () => {
             TypeScript, and AI-driven platforms. 3+ years building real-time
             dashboards and workflow systems that move the needle.
           </p>
+
+          <div className='flex flex-wrap items-center gap-4'>
+            <Button
+              className='rounded-full px-7 py-6 bg-card border border-border text-foreground hover:bg-card/80 gap-2'
+              onClick={handleDownloadCV}
+            >
+              <Download className='w-4 h-4' />
+              Download CV
+            </Button>
+
+            {/* <div className='flex items-center gap-3'>
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target='_blank'
+                  rel='noreferrer'
+                  aria-label={label}
+                  className='w-11 h-11 rounded-full glass-card flex items-center justify-center text-foreground hover:text-primary hover:scale-110 transition-all duration-300'
+                >
+                  <Icon className='w-4 h-4' />
+                </a>
+              ))}
+            </div> */}
+          </div>
         </div>
 
         <div

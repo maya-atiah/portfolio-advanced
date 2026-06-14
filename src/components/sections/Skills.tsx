@@ -29,14 +29,21 @@ const skills: Skill[] = [
 
 const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) =>
-        entry.isIntersecting && sectionRef.current?.classList.add('revealed'),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sectionRef.current?.classList.add('revealed');
+          gridRef.current?.classList.add('revealed');
+        }
+      },
       { threshold: 0.1 },
     );
+
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -52,7 +59,10 @@ const Skills = () => {
           <h2 className='section-title inline-block'>Tech Stack</h2>
         </div>
 
-        <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5 staggered-children'>
+        <div
+          ref={gridRef}
+          className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5 staggered-children'
+        >
           {skills.map((skill) => (
             <div
               key={skill.name}

@@ -58,18 +58,38 @@ const ProjectDetails = () => {
             ))}
           </div>
           <div className='flex flex-wrap gap-3'>
-            <Button className='btn-primary'>
-              <ExternalLink className='w-4 h-4 mr-2' /> Live Demo
-            </Button>
-            <Button
-              variant='outline'
-              className='border-border bg-card/40 backdrop-blur-sm hover:bg-card text-foreground rounded-full px-6'
-            >
-              View Code
-            </Button>
+            {project.link && (
+              <Button className='btn-primary' asChild>
+                <a
+                  href={project.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-2'
+                >
+                  <ExternalLink className='w-4 h-4' />
+                  Live Demo
+                </a>
+              </Button>
+            )}
+
+            {project.codeLink && (
+              <Button
+                variant='outline'
+                className='border-border bg-card/40 backdrop-blur-sm hover:bg-card text-foreground rounded-full px-6'
+                asChild
+              >
+                <a
+                  href={project.codeLink}
+                  target='_blank'
+                  rel='noopener noreferrer flex items-center gap-1'
+                >
+                  View Code
+                </a>
+              </Button>
+            )}
           </div>
         </div>
-
+        {/* 
         <div className='grid md:grid-cols-2 gap-6'>
           <div className='glass-card p-8 glow-border'>
             <h3 className='text-xl font-serif text-gradient mb-3'>
@@ -88,7 +108,23 @@ const ProjectDetails = () => {
               decisions, and contributed to backend API design.
             </p>
           </div>
-        </div>
+        </div> */}
+        {project.images?.length ? (
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-10'>
+            {project.images.slice(0, 2).map((img, index) => (
+              <div
+                key={index}
+                className='rounded-xl overflow-hidden border border-border bg-card/40'
+              >
+                <img
+                  src={img}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  className='w-full h-64 object-cover hover:scale-105 transition-transform duration-300'
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -104,7 +104,7 @@ const Experience = () => {
           {items.map((item, i) => (
             <div key={i} className='mb-12 relative animate-fade-up'>
               <div
-                className='absolute -left-[42px] md:-left-[54px] top-1 w-5 h-5 rounded-full ring-4 ring-background'
+                className='absolute -left-[42px] md:-left-[58px] top-1 w-5 h-5 rounded-full ring-4 ring-background'
                 style={{ background: 'var(--gradient-primary)' }}
               />
               <div className='glass-card p-6 md:p-8 glow-border'>
