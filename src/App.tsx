@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/theme';
 import MainRoutes from './routes/MainRoutes';
 import { Toaster } from 'sonner';

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Mail, Phone, MapPin, CheckCircle, XCircle } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Input } from '../ui/Input';
 import { Textarea } from '../ui/Textarea';
 import { Button } from '../ui/Button';

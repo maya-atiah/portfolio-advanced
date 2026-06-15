@@ -1,12 +1,5 @@
-import {
-  BarChart3,
-  Cloud,
-  Code2,
-  Gauge,
-  Layout,
-  Smartphone,
-} from 'lucide-react';
-import React, { Activity, useEffect, useRef } from 'react';
+import { BarChart3, Cloud, Code2, Gauge, Layout } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 const AboutMe = () => {
   const sectionRef = useRef<HTMLElement>(null);

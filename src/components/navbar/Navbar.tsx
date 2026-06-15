@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';

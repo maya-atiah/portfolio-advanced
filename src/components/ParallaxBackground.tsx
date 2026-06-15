@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParallax } from '../lib/parallax';
 
 const ParallaxBackground = () => {

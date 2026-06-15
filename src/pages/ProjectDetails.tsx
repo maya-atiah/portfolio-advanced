@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { ArrowLeft, ExternalLink } from 'lucide-react';
@@ -72,7 +71,7 @@ const ProjectDetails = () => {
               </Button>
             )}
 
-            {project.codeLink && (
+            {/* {project.codeLink && (
               <Button
                 variant='outline'
                 className='border-border bg-card/40 backdrop-blur-sm hover:bg-card text-foreground rounded-full px-6'
@@ -86,7 +85,7 @@ const ProjectDetails = () => {
                   View Code
                 </a>
               </Button>
-            )}
+            )} */}
           </div>
         </div>
         {/* 
