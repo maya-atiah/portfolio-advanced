@@ -39,15 +39,15 @@ const AboutMe = () => {
         <div className='relative pl-10'>
           <div className='absolute left-3 top-4 bottom-4 w-px bg-primary/60' />
 
-          <ul className='space-y-16'>
+          <ul className='space-y-10'>
             {services.map(({ icon: Icon, title }, i) => (
               <li key={i} className='relative flex items-center gap-6'>
                 {/* dot */}
                 <span className='absolute -left-[33px] w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]' />
-                <div className='w-14 h-14 rounded-xl glass-card flex items-center justify-center shrink-0'>
-                  <Icon className='w-7 h-7 text-primary' strokeWidth={1.5} />
+                <div className='w-10 h-10 rounded-xl glass-card flex items-center justify-center shrink-0'>
+                  <Icon className='w-5 h-5 text-primary' strokeWidth={1.5} />
                 </div>
-                <h3 className='font-serif text-xl md:text-2xl text-foreground font-medium'>
+                <h3 className='font-serif text-md md:text-md text-foreground font-medium'>
                   {title}
                 </h3>
               </li>

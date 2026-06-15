@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import ThemeToggle from '../ThemeToggle';
-import { Menu, X } from 'lucide-react';
-import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', href: 'home' },
@@ -16,6 +22,7 @@ const Navbar = () => {
     { name: 'Projects', href: 'projects' },
     { name: 'Contact', href: 'contact' },
   ];
+
   return (
     <header
       className={cn(
@@ -27,7 +34,7 @@ const Navbar = () => {
     >
       <div className='flex justify-between items-center max-w-7xl mx-auto'>
         <div className='font-serif text-2xl tracking-wider font-bold text-foreground'>
-          Maya
+          Maya A <span className='text-primary'>.</span>
         </div>
 
         <div className='flex items-center gap-3 md:hidden'>
@@ -59,6 +66,7 @@ const Navbar = () => {
           <ThemeToggle />
         </nav>
       </div>
+
       <div
         className={cn(
           'fixed inset-0 backdrop-blur-2xl bg-background/95 z-40 flex flex-col justify-center items-center transition-all duration-500 md:hidden',
