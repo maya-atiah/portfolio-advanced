@@ -17,9 +17,10 @@ const Index = () => {
       <main className='overflow-hidden relative'>
         <HeroSection />
         <AboutMe />
-        <Skills />
         <Experience />
         <Project />
+        <Skills />
+
         <Contact />
       </main>
       <Footer />
