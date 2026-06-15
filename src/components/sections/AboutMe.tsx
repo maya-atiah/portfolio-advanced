@@ -29,6 +29,11 @@ const AboutMe = () => {
     { icon: Gauge, title: 'Performance Optimization' },
   ];
 
+  const stats = [
+    { value: '10', symbol: '+', label: 'Completed\nProjects' },
+    { value: '3', symbol: '+', label: 'Years of\nexperience' },
+  ];
+
   return (
     <section
       id='about'
@@ -66,6 +71,23 @@ const AboutMe = () => {
               Statistics — I love turning complex problems into clean,
               performant interfaces.
             </p>
+          </div>
+          <div className='grid grid-cols-3 gap-6 max-w-lg'>
+            {stats.map((s, i) => (
+              <div key={i}>
+                <div className='flex items-baseline gap-1 mb-3'>
+                  <span className='text-4xl md:text-5xl font-serif font-bold text-foreground'>
+                    {s.value}
+                  </span>
+                  <span className='text-3xl md:text-4xl font-bold text-primary'>
+                    {s.symbol}
+                  </span>
+                </div>
+                <p className='text-sm text-muted-foreground whitespace-pre-line leading-snug'>
+                  {s.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

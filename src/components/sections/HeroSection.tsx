@@ -1,8 +1,7 @@
-import { ScrollLink } from 'react-scroll';
 import { useMousePosition, useParallax } from '../../lib/parallax';
 import { Button } from '../ui/Button';
 import { Download } from 'lucide-react';
-
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const HeroSection = () => {
   const heroOffset = useParallax(0.3);
 
@@ -18,6 +17,15 @@ const HeroSection = () => {
     link.click();
     document.body.removeChild(link);
   };
+  const socials = [
+    { icon: FaGithub, href: 'https://github.com/maya-atiah', label: 'GitHub' },
+    {
+      icon: FaLinkedin,
+      href: 'https://www.linkedin.com/in/maya-atiah/',
+      label: 'LinkedIn',
+    },
+  ];
+
   return (
     <section
       id='home'
@@ -54,20 +62,19 @@ const HeroSection = () => {
               Download CV
             </Button>
 
-            {/* <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-3'>
               {socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target='_blank'
                   rel='noreferrer'
-                  aria-label={label}
-                  className='w-11 h-11 rounded-full glass-card flex items-center justify-center text-foreground hover:text-primary hover:scale-110 transition-all duration-300'
+                  className='w-11 h-11 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-all'
                 >
                   <Icon className='w-4 h-4' />
                 </a>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
 
