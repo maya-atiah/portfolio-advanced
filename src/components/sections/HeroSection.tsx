@@ -32,11 +32,11 @@ const HeroSection = () => {
       className='min-h-screen flex items-center justify-center relative overflow-hidden px-4 md:px-8 lg:px-16 pt-24'
     >
       <div
-        className='max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center'
+        className='max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-5 md:gap-12 items-center'
         style={{ transform: `translateY(${heroOffset * 0.4}px)` }}
       >
         <div className='flex flex-col justify-center order-2 md:order-1 animate-fade-up'>
-          <h1 className='text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 leading-tight text-foreground'>
+          <h1 className='text-3xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 leading-tight text-foreground'>
             Maya Atiah
           </h1>
 
@@ -86,12 +86,12 @@ const HeroSection = () => {
           }}
         >
           <div
-            className='absolute w-[420px] h-[420px] md:w-[480px] md:h-[480px] rounded-full opacity-60 blur-3xl animate-pulse-glow'
+            className='absolute w-[320px] h-[320px] md:w-[480px] md:h-[480px] rounded-full opacity-60 blur-3xl animate-pulse-glow'
             style={{ background: 'var(--gradient-primary)' }}
           />
 
           <div
-            className='relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] rounded-full p-[3px]'
+            className='relative w-[240px] h-[240px] md:w-[420px] md:h-[420px] rounded-full p-[3px]'
             style={{ background: 'var(--gradient-primary)' }}
           >
             <div className='w-full h-full rounded-full overflow-hidden bg-background'>
